@@ -1,0 +1,19 @@
+def button_count(t):
+    if t % 10 != 0:
+        print(-1)    
+        return    
+    
+    button_times = {'A':300, 'B':60, 'C':10}
+    
+    press_a = t // button_times['A']
+    t %= button_times['A']
+    press_b = t // button_times['B']
+    t %= button_times['B']
+    press_c = t // button_times['C']
+    t %= button_times['C']
+    
+    print(press_a, press_b, press_c)
+    
+t = int(input())
+
+button_count(t)

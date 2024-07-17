@@ -1,0 +1,5 @@
+from collections import Counter
+
+input()
+votes = Counter(input().strip())
+print('A' if votes['A'] > votes['B'] else 'B' if votes['A'] < votes['B'] else 'Tie')
