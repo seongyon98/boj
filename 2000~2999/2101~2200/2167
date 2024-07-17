@@ -1,0 +1,27 @@
+import sys
+input = sys.stdin.readline
+
+def prefix_sum(mtx, n, m):
+    pfx = [[0] * (m+1) for _ in range(n+1)]
+    for i in range(1, n+1):
+        for j in range(1, m+1):
+            pfx[i][j] = (mtx[i-1][j-1] + pfx[i-1][j] + pfx[i][j-1] - pfx[i-1][j-1])
+    
+    return pfx
+
+def sum_query(pfx, i, j, x, y):
+    return (pfx[x][y] - pfx[x][j-1] - pfx[i-1][y] + pfx[i-1][j-1])
+
+n, m = map(int, input().split())
+mtx = []
+for _ in range(n):
+    mtx.append(list(map(int, input().split())))
+    
+pfx = prefix_sum(mtx, n, m)   
+
+k = int(input().rstrip())
+
+for _ in range(k):
+    i, j, x, y = map(int, input().split())
+    result = sum_query(pfx, i, j, x, y)
+    print(result)
