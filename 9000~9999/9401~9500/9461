@@ -1,0 +1,13 @@
+import sys
+
+t = int(sys.stdin.readline().rstrip())
+
+for _ in range(t):
+    n = int(sys.stdin.readline().rstrip())
+    
+    length = [1, 1, 1, 2, 2]
+
+    for i in range(5, n+1):
+        length.append(length[i-1]+length[i-5])
+            
+    print(length[n-1])
