@@ -1,0 +1,16 @@
+def max_sum(nums):
+    if not nums:
+        return 0
+
+    crt_sum = max_s = nums[0]
+
+    for num in nums[1:]:
+        crt_sum = max(num, crt_sum + num)
+        max_s = max(max_s, crt_sum)
+
+    return max_s
+
+n = int(input())
+nums = list(map(int, input().split()))
+
+print(max_sum(nums))
