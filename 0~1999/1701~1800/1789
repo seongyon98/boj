@@ -1,0 +1,12 @@
+import sys
+import math
+
+s = int(sys.stdin.readline().rstrip())
+
+n = int((math.sqrt(8*s + 1) - 1) / 2)
+
+if n == ((math.sqrt(8*s + 1) - 1) // 2) :
+    print(n)
+    
+else:
+    print(n+1)

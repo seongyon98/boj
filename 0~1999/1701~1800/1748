@@ -1,0 +1,17 @@
+def total_digits(n):
+    total = 0
+    lth = 1
+    cnt = 9
+    
+    while n > cnt:
+        total += cnt * lth
+        n -= cnt
+        lth += 1
+        cnt *= 10
+    
+    total += n * lth
+    return total
+
+n = int(input())
+
+print(total_digits(n))
