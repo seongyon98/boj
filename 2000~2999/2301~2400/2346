@@ -1,0 +1,39 @@
+import sys
+from collections import deque
+
+def pop_balloon(n, pops):
+    result = []
+    balloon = deque(range(1, n+1))
+    
+    result.append(balloon.popleft())
+    move = pops.popleft()
+    
+    while True:
+        if not pops:
+            break
+        
+        if move > 0:
+            for _ in range(move-1):
+                pops.append(pops.popleft())
+                balloon.append(balloon.popleft())
+
+            result.append(balloon.popleft())
+            move = pops.popleft()
+
+        if move < 0:
+            if pops:
+                for i in range(move,-1, 1):
+                    pops.appendleft(pops.pop())
+                    balloon.appendleft(balloon.pop())
+            
+                result.append(balloon.pop())
+                move = pops.pop()
+
+    return result
+
+n = int(sys.stdin.readline().rstrip())
+pops = deque(map(int, sys.stdin.readline().split()))
+
+balloons = pop_balloon(n, pops)
+        
+print(*balloons)
