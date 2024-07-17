@@ -1,0 +1,19 @@
+import sys
+input = sys.stdin.readline
+
+def find_repetition(n, p):
+    current_value = n
+    values_seen = []
+    seen_set = set()
+    
+    while current_value not in seen_set:
+        values_seen.append(current_value)
+        seen_set.add(current_value)
+        current_value = (current_value*n) % p
+    
+    start = values_seen.index(current_value)
+    
+    return len(set(values_seen[start:]))
+
+n, p = map(int, input().split())
+print(find_repetition(n, p))

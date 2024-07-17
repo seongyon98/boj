@@ -1,0 +1,43 @@
+import sys
+input = sys.stdin.readline
+
+def valid_n(gs, rps):
+    def s_and_b(ans, g):
+        stks = sum(1 for ans, g in zip(ans, g) if ans == g)
+        balls = len(set(ans) & set(g)) - stks
+
+        return stks, balls
+
+    psb_n = [
+        f"{i}{j}{k}"
+        for i in range(1, 10)
+        for j in range(1, 10)
+        for k in range(1, 10)
+        if i != j and j != k and i != k
+    ]
+
+    vld_cnt = 0
+
+    for n in psb_n:
+        valid = True
+        for g, (ept_s, ept_b) in zip(gs, rps):
+            stks, balls = s_and_b(n, g)
+            if stks != ept_s or balls != ept_b:
+                valid = False
+                break
+        if valid:
+            vld_cnt += 1
+
+    return vld_cnt
+
+
+N = int(input())
+
+gs = []
+rps = []
+for _ in range(N):
+    g, stks, balls = map(str, input().split())
+    gs.append(g)
+    rps.append((int(stks), int(balls)))
+
+print(valid_n(gs, rps))
