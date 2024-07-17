@@ -1,0 +1,19 @@
+t = int(input())
+
+for _ in range(t):
+    h, w, n = map(int, input().split())
+    
+    if h == 1:
+        floor = h
+        room = n
+        
+    else:    
+        floor = n % h
+        if floor == 0:
+            floor = h
+        
+        room = (n // h) + 1
+        if n % h == 0:
+            room -= 1
+        
+    print(floor*100 + room)
