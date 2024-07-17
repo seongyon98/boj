@@ -1,0 +1,10 @@
+word = input()
+text = ""
+
+for alpha in word:
+    if alpha.islower():
+        text += alpha.upper()
+    else:
+        text += alpha.lower()
+        
+print(text)
