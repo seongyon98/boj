@@ -1,0 +1,7 @@
+t = int(input())
+
+for i in range(1, t+1):
+    rice = list(map(int, input().split()))
+    rice.sort()
+    
+    print("Case #{}: {}".format(i, rice[-1]))
