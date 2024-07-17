@@ -1,0 +1,24 @@
+formula = input()
+
+formula = formula.split('-')
+plus = []
+
+for f in formula:
+    if '+' in f:
+        plus_arr = 0
+        for j in f.split('+'):
+            if j not in ['0', '00', '000', '0000', '00000']:
+                plus_arr += int(j.lstrip('0'))
+        plus.append(plus_arr)
+        
+    else:
+        if f not in ['0', '00', '000', '0000', '00000']:
+            plus.append(int(f.lstrip('0')))
+        else:
+            plus.append(0)
+            
+result = plus[0]
+for i in range(1, len(plus)):
+    result -= plus[i]
+    
+print(result)
