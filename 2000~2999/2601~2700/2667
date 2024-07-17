@@ -1,0 +1,39 @@
+def find_complexes(grid):
+    visited = [[False]*n for _ in range(n)]
+    complexes = []
+    
+    def dfs(x, y):
+        stack = [(x, y)]
+        size = 0
+        while stack:
+            cx, cy = stack.pop()
+            if not (0<=cx<n and 0<=cy<n) or visited[cx][cy] or grid[cx][cy] == 0:
+                continue
+            visited[cx][cy] = True
+            size += 1
+            for nx, ny in [(cx-1, cy), (cx+1, cy), (cx, cy-1), (cx, cy+1)]:
+                stack.append((nx, ny))
+                
+        return size
+    
+    for i in range(n):
+        for j in range(n):
+            if grid[i][j] == 1 and not visited[i][j]:
+                complex_size = dfs(i, j)
+                if complex_size > 0:
+                    complexes.append(complex_size)
+    
+    complexes.sort()
+    return complexes
+
+n = int(input())
+grid = []
+for _ in range(n):
+    row = list(map(int, input().strip()))
+    grid.append(row)
+    
+complexes = find_complexes(grid)
+
+print(len(complexes))
+for size in complexes:
+    print(size)

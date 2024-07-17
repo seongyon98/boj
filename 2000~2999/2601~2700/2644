@@ -1,0 +1,31 @@
+from collections import deque
+import sys
+input = sys.stdin.readline
+
+def relationship(n, p1, p2, relations):
+    graph = [[] for _ in range(n+1)]
+    visited = [-1]*(n+1)
+    
+    for x, y in relations:
+        graph[x].append(y)
+        graph[y].append(x)
+        
+    queue = deque([p1])
+    visited[p1] = 0
+    
+    while queue:
+        c = queue.popleft()
+        for neighbor in graph[c]:
+            if visited[neighbor] == -1:
+                visited[neighbor] = visited[c] + 1
+                queue.append(neighbor)
+    
+    return visited[p2]
+
+n = int(input().rstrip())
+p1, p2 = map(int, input().split())
+m = int(input().rstrip())
+relations = [tuple(map(int, input().split())) for _ in range(m)]
+
+result = relationship(n, p1, p2, relations)
+print(result)
