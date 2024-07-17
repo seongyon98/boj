@@ -1,0 +1,27 @@
+def combinations(s, k, idx, curr, result):
+    if len(curr) == 6:
+        result.append(curr[:])
+        return
+    
+    if idx == k:
+        return
+    
+    curr.append(s[idx])
+    combinations(s, k, idx+1, curr, result)
+    curr.pop()
+    
+    combinations(s, k, idx+1, curr, result)
+
+while True:
+    k_values = list(map(int, input().split()))
+    k = k_values[0]
+    if k == 0:
+        break
+    
+    s = k_values[1:]
+    result = []
+    combinations(s, k, 0, [], result)
+    
+    for combo in result:
+        print(*combo)
+    print()
