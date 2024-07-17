@@ -1,0 +1,15 @@
+from collections import Counter
+
+rec = []
+
+for _ in range(3):
+    x, y = map(int, input().split())
+    rec.append((x, y))
+
+x_counter = Counter(point[0] for point in rec)
+y_counter = Counter(point[1] for point in rec)
+
+x = next(x for x, count in x_counter.items() if count == 1)
+y = next(y for y, count in y_counter.items() if count == 1)
+
+print(x, y)
