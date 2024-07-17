@@ -1,0 +1,31 @@
+import sys
+input = sys.stdin.readline
+
+def quad_tree(x, y, size):
+    initial = video[x][y]
+    all_same= True
+    
+    for i in range(x, x+size):
+        for j in range(y, y+size):
+            if video[i][j] != initial:
+                all_same = False
+                break
+        if not all_same:
+            break
+        
+    if all_same:
+        return str(initial)
+    
+    else:
+        half = size//2
+        t_l = quad_tree(x, y, half)
+        t_r = quad_tree(x, y+half, half)
+        b_l = quad_tree(x+half, y, half)
+        b_r = quad_tree(x+half, y+half, half)
+        
+        return f"({t_l}{t_r}{b_l}{b_r})"
+    
+n = int(input().strip())
+video = [list(map(int, input().strip())) for _ in range(n)]
+
+print(quad_tree(0, 0, n))

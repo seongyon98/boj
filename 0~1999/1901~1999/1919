@@ -1,0 +1,16 @@
+from collections import Counter
+
+def anagrams(s1, s2):
+    count1 = Counter(s1)
+    count2 = Counter(s2)
+    
+    diff = count1 - count2
+    diff.update(count2 - count1)
+    
+    deletions = sum(diff.values())
+        
+    return deletions
+
+s1 = input()
+s2 = input()
+print(anagrams(s1, s2))
