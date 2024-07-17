@@ -1,0 +1,14 @@
+n, m = map(int, input().split())
+
+grid = []
+for _ in range(n):
+    row = list(map(str, input()))
+    grid.append(row)
+    
+row_g = sum(1 for row in grid if 'X' in row)
+col_g = sum(1 for col in range(m) if any(grid[row][col] == 'X' for row in range(n)))
+
+row_a = n-row_g
+col_a = m-col_g
+
+print(max(row_a, col_a))

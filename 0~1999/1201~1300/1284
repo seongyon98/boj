@@ -1,0 +1,19 @@
+while True:
+    n = input()
+    
+    if n == '0':
+        break
+    
+    total = 2
+    for i, digit in enumerate(n):
+        if digit == '1':
+            total += 2
+        elif digit == '0':
+            total += 4
+        else:
+            total += 3
+            
+        if i < len(n) - 1:
+            total += 1
+    
+    print(total)
