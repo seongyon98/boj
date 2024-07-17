@@ -1,0 +1,11 @@
+a = int(input())
+b = int(input())
+c = int(input())
+d = int(input())
+
+total = a+b+c+d
+minutes = total // 60
+seconds = total % 60
+
+print(minutes)
+print(seconds)

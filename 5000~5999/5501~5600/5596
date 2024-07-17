@@ -1,0 +1,7 @@
+minguk = list(map(int, input().split()))
+mansei = list(map(int, input().split()))
+
+if sum(minguk) >= sum(mansei):
+    print(sum(minguk))
+else:
+    print(sum(mansei))

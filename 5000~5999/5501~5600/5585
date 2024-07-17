@@ -1,0 +1,18 @@
+def change(yen):
+    coins = [500, 100, 50, 10, 5, 1]
+    change = 1000 - yen
+    num_coins = 0
+    
+    if change == 0:
+        return 0
+    
+    for coin in coins:
+        num_coins += change // coin
+        change %= coin
+    
+    return num_coins
+
+yen = int(input())
+result = change(yen)
+
+print(result)
