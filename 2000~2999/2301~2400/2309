@@ -1,0 +1,14 @@
+from itertools import combinations
+
+dwarfs = []
+
+for i in range(9):
+    height = int(input())
+    dwarfs.append(height)
+    
+for combo in combinations(dwarfs, 7):
+    if sum(combo) == 100:
+        h = sorted(combo)
+        for height in h:
+            print(height)
+        break
