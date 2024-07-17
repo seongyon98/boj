@@ -1,0 +1,18 @@
+import sys
+input = sys.stdin.readline
+
+def min_bribes(dasom, others):
+    bribes = 0
+    while others and max(others) >= dasom:
+        max_idx = others.index(max(others))
+        others[max_idx] -= 1
+        dasom += 1
+        bribes += 1
+        
+    return bribes
+
+n = int(input().rstrip())
+dasom = int(input().rstrip())
+others = [int(input().rstrip()) for _ in range(n-1)]
+
+print(min_bribes(dasom, others))
