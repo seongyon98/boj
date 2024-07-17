@@ -1,0 +1,21 @@
+def closest_score(scores):
+    closest = 0
+    current_score = 0
+    
+    for score in scores:
+        current_score += score
+        if abs(100 - current_score) < abs(100 - closest):
+            closest = current_score
+        elif abs(100 - current_score) == abs(100 - closest):
+            closest = max(closest, current_score)
+        if current_score > 100:
+            break
+    
+    return closest
+
+scores = []
+for _ in range(10):
+    mushroom = int(input())
+    scores.append(mushroom)
+
+print(closest_score(scores))
