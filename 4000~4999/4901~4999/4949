@@ -1,0 +1,31 @@
+import sys
+
+while True:
+    
+    sentence = sys.stdin.readline().rstrip()
+    
+    if sentence == ".":
+        break
+    
+    elif sentence[-1] == ".":
+        stack = []
+
+        for c in sentence[:-1]:
+            if c == "(" or c =="[":
+                stack.append(c)
+            elif c == ")":
+                if not stack or stack[-1] != "(":
+                    print('no')
+                    break
+                stack.pop()
+            elif c == "]":
+                if not stack or stack[-1] != "[":
+                    print('no')
+                    break
+                stack.pop()
+            
+        else:    
+            if not stack:
+                print('yes')
+            else:
+                print('no')
