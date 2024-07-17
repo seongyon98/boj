@@ -1,0 +1,10 @@
+import sys
+
+n = int(sys.stdin.readline().rstrip())
+
+digits = [int(digit) for digit in str(n)]
+
+digits.sort(reverse=True)
+
+for d in digits:
+    print(d, end='')
