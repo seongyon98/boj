@@ -1,0 +1,26 @@
+def create_cantor_set(N):
+    length = 3 ** N
+    cantor_set = ['-'] * length
+    
+    def divide_and_replace(cantor_set, start, end):
+        if end - start == 1:
+            return
+        
+        third = (end - start) // 3
+        for i in range(start + third, start + 2 * third):
+            cantor_set[i] = ' '
+        
+        divide_and_replace(cantor_set, start, start + third)
+        divide_and_replace(cantor_set, start + 2 * third, end)
+    
+    divide_and_replace(cantor_set, 0, length)
+    
+    return ''.join(cantor_set)
+
+while True:
+    try:
+        N = int(input())
+        result = create_cantor_set(N)
+        print(result)
+    except EOFError:
+        break
