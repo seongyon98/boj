@@ -1,0 +1,22 @@
+def generate_pattern(n):
+    if n == 3:
+        return ["***", "* *", "***"]
+    
+    smaller_pattern = generate_pattern(n // 3)
+    pattern = []
+
+    for i in range(n):
+        if (i // (n // 3)) % 3 == 1:
+            pattern.append(smaller_pattern[i % (n // 3)] + " " * (n // 3) + smaller_pattern[i % (n // 3)])
+        else:
+            pattern.append(smaller_pattern[i % (n // 3)] * 3)
+
+    return pattern
+
+def print_pattern(n):
+    pattern = generate_pattern(n)
+    for line in pattern:
+        print(line)
+
+n = int(input().strip())
+print_pattern(n)

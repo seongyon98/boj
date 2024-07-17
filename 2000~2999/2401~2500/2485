@@ -1,0 +1,16 @@
+import math
+from functools import reduce
+import sys
+input = sys.stdin.readline
+
+n = int(input().rstrip())
+trees = []
+for _ in range(n):
+    trees.append(int(input().rstrip()))
+
+dist = [trees[i] - trees[i-1] for i in range(1, n)]
+gcd = reduce(math.gcd, dist)
+
+add_trees = sum((d//gcd)-1 for d in dist)
+
+print(add_trees)

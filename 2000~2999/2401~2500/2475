@@ -1,0 +1,5 @@
+label = list(map(int, input().split()))
+
+num = sum(x**2 for x in label) % 10
+
+print(num)
