@@ -1,0 +1,29 @@
+import sys
+
+n = int(sys.stdin.readline().strip())
+count = [0] * (n + 1)
+previous = [-1] * (n + 1)
+
+for i in range(2, n + 1):
+    count[i] = count[i - 1] + 1
+    previous[i] = i - 1
+    
+    if i % 2 == 0:
+        if count[i] > count[i // 2] + 1:
+            count[i] = count[i // 2] + 1
+            previous[i] = i // 2
+    
+    if i % 3 == 0:
+        if count[i] > count[i // 3] + 1:
+            count[i] = count[i // 3] + 1
+            previous[i] = i // 3
+
+print(count[n])
+
+path = []
+current = n
+while current != -1:
+    path.append(current)
+    current = previous[current]
+
+print(*path)
