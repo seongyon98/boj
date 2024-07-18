@@ -1,0 +1,36 @@
+import sys
+
+n = int(sys.stdin.readline())
+grades = []
+
+try:
+    if n == 0:
+        raise ZeroDivisionError('0')
+
+    for _ in range(n):
+        g = int(sys.stdin.readline().rstrip())
+        grades.append(g)
+
+    sorted_grades = sorted(grades)
+
+    a = n * 0.15
+
+    if (a-int(a)) == 0.5:
+        a = int(int(a) + 1)
+    else:
+        a = int(round(a))
+    
+    b = int(n-a)
+    
+    total = sum(sorted_grades[a:b])
+    average = (total / (b-a))
+    
+    if (average - int(average)) == 0.5:
+        average = int(average) + 1
+    else:
+        average = round(average)
+        
+    print(average)
+    
+except ZeroDivisionError as e:
+    print(e)
