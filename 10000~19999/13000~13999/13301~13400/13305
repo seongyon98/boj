@@ -1,0 +1,15 @@
+import sys
+input = sys.stdin.readline
+
+n = int(input().rstrip())
+road = list(map(int, input().split()))
+oil = list(map(int, input().split()))
+
+min_oil = oil[0]
+result = 0
+
+for i in range(n-1):
+    min_oil = min(min_oil, oil[i])
+    result += min_oil * road[i]
+
+print(result)
