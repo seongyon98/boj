@@ -1,0 +1,16 @@
+def hashing(string):
+    r = 31
+    m = 1234567891
+    hash_value = 0
+    
+    for i in range(len(string)):
+        hash_value += (ord(string[i]) - ord('a')+1) * (r**i)
+        hash_value %= m
+    return hash_value
+
+l = int(input())
+str = input()
+
+hash_value = hashing(str)
+
+print(hash_value)
