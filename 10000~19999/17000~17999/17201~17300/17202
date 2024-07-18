@@ -1,0 +1,22 @@
+def comp(A, B):
+    al = []
+    for i in range(8):
+        al.append(A[i])
+        al.append(B[i])
+        
+    while len(al) > 2:
+        next_c = []
+        for j in range(len(al) - 1):
+            sum = (al[j] + al[j + 1]) % 10
+            next_c.append(sum)
+        al = next_c
+
+    r = int(''.join(map(str, al)))
+    
+    return r
+
+A = list(map(int, input()))
+B = list(map(int, input()))
+
+result = comp(A, B)
+print(f"{result:02}")
