@@ -1,0 +1,12 @@
+so, ko, ha = map(int, input().split())
+
+if so+ko+ha >= 100:
+    print('OK')
+else:
+    min_p = min(so, ko, ha)
+    if min_p == so:
+        print('Soongsil')
+    elif min_p == ko:
+        print('Korea')
+    else:
+        print('Hanyang')
