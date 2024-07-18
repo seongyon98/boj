@@ -1,0 +1,18 @@
+import sys
+
+n, k = map(int, sys.stdin.readline().split())
+
+coin_values = []
+
+for _ in range(n):
+    value = int(sys.stdin.readline().rstrip())
+    coin_values.append(value)
+    
+coin_count = 0
+
+for i in range(n-1, -1, -1):
+    count = k // coin_values[i]
+    k -= count*coin_values[i]
+    coin_count += count
+    
+print(coin_count)
