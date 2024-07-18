@@ -1,0 +1,7 @@
+from collections import Counter
+
+s = input()
+counter = Counter(s)
+
+for letter in 'abcdefghijklmnopqrstuvwxyz':
+    print(counter[letter], end=" ")

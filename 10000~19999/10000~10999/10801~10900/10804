@@ -1,0 +1,13 @@
+cards = list(range(1, 21))
+
+intervals = []
+for _ in range(10):
+    a, b = map(int, input().split())
+    intervals.append((a, b))
+    
+for a, b in intervals:
+    start = a - 1
+    end = b
+    cards[start:end] = cards[start:end][::-1]
+
+print(*cards)

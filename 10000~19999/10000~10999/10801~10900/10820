@@ -1,0 +1,19 @@
+while True:
+    try:
+        lower = 0
+        upper = 0
+        digit = 0
+        space = 0
+        s = input()
+        for char in s:
+            if char.islower():
+                lower += 1
+            elif char.isupper():
+                upper += 1
+            elif char.isdigit():
+                digit += 1
+            elif char.isspace():
+                space += 1
+        print(lower, upper, digit, space)
+    except:
+        break

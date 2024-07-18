@@ -1,0 +1,17 @@
+n = int(input())
+cards = list(map(int, input().split()))
+
+m = int(input())
+m_cards = list(map(int, input().split()))
+
+card_map = {}
+for card in cards:
+    card_map[card] = True
+    
+result = [0]*(len(m_cards))
+
+for i in range(len(m_cards)):
+    if m_cards[i] in card_map:
+            result[i] += 1
+
+print(*result)

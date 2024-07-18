@@ -1,0 +1,13 @@
+import sys
+input = sys.stdin.readline
+
+n = int(input())
+st = []
+for _ in range(n):
+    name, k, e, m = input().split()
+    st.append((name, int(k), int(e), int(m)))
+
+sort_st = sorted(st, key=lambda s: (-s[1], s[2], -s[3], s[0]))
+
+for s in sort_st:
+    print(s[0])
