@@ -1,0 +1,13 @@
+n, t = map(int, input().split())
+works = list(map(int, input().split()))
+
+cnt= 0
+total = 0
+for time in works:
+    if total + time <= t:
+        total += time
+        cnt += 1
+    else:
+        break
+        
+print(cnt)
