@@ -1,0 +1,32 @@
+import sys
+input = sys.stdin.readline
+
+n, m, b = map(int, input().split())
+
+height = []
+for _ in range(n):
+    row = list(map(int, input().split()))
+    height.append(row)
+
+best = float('inf')
+best_fl = -1
+for fl in range(257):
+    block = b
+    result = 0
+    for i in range(n):
+        for j in range(m):
+            t = height[i][j]
+            if t == fl:
+                continue
+            elif t < fl:
+                result += (fl - t)
+                block -= (fl - t)
+            else:
+                result += (t - fl) * 2
+                block += (t - fl)
+    if block >= 0:
+        if result < best or (result == best and fl > best_fl):
+            best = result
+            best_fl = fl
+
+print(best, best_fl)
