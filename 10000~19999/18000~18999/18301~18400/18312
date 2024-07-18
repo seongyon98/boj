@@ -1,0 +1,16 @@
+def count_times(n, k):
+    count = 0
+    k = str(k)
+    
+    for hour in range(n+1):
+        for minute in range(60):
+            for second in range(60):
+                time_str = f'{hour:02d}{minute:02d}{second:02d}'
+                
+                if k in time_str:
+                    count += 1
+                    
+    return count
+
+n, k = map(int, input().split())
+print(count_times(n, k))
