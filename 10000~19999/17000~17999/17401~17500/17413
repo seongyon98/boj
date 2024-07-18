@@ -1,0 +1,17 @@
+import re
+
+def reverse_non_tags(s):
+    parts = re.split(r'(<[^>]*>)', s)
+    result = []
+    for part in parts:
+        if part.startswith('<') and part.endswith('>'):
+            result.append(part)
+        else:
+            words = part.split()
+            reversed_words = [word[::-1] for word in words]
+            result.append(" ".join(reversed_words))
+
+    return ''.join(result)
+
+s = input()
+print(reverse_non_tags(s))
