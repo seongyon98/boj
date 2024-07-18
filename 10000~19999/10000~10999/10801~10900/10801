@@ -1,0 +1,21 @@
+import sys
+input = sys.stdin.readline
+
+a_score = 0
+b_score = 0
+
+a_card = list(map(int, input().split()))
+b_card = list(map(int, input().split()))
+
+for i in range(10):
+    if a_card[i] > b_card[i]:
+        a_score += 1
+    elif a_card[i] < b_card[i]:
+        b_score += 1
+        
+if a_score > b_score:
+    print('A')
+elif a_score < b_score:
+    print('B')
+else:
+    print('D')
