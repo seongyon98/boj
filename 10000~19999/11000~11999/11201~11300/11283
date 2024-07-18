@@ -1,0 +1,10 @@
+def hangul_idx(ch):
+    b_code = 0xAC00
+    ch_code = ord(ch)
+    
+    h_idx = (ch_code - b_code) + 1
+    
+    return h_idx
+
+s = input()
+print(hangul_idx(s))
