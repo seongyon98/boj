@@ -1,0 +1,9 @@
+import sys
+
+a, b, c, d, e, f = map(int, sys.stdin.readline().split())
+
+if (a*e - b*d) != 0:
+    x = int((c*e - b*f)/(a*e - b*d))
+    y = int((a*f - c*d)/(a*e - b*d))
+
+    print(x, y)
