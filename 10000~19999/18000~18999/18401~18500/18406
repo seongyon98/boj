@@ -1,0 +1,14 @@
+import sys
+input = sys.stdin.readline
+
+n = int(input().rstrip())
+n_str = str(n)
+a = len(n_str) // 2
+
+left_sum = sum(int(digit) for digit in n_str[:a])
+right_sum = sum(int(digit) for digit in n_str[a:])
+
+if left_sum == right_sum:
+    print('LUCKY')
+else:
+    print('READY')
