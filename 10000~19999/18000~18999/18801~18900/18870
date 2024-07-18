@@ -1,0 +1,9 @@
+N = int(input())
+X = list(map(int, input().split()))
+
+s_X = sorted(set(X))
+s_X_d = {value: idx for idx, value in enumerate(s_X)}
+
+result = [s_X_d[x] for x in X]
+
+print(' '.join(map(str, result)))
