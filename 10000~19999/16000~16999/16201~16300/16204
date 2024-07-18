@@ -1,0 +1,10 @@
+def max_matching_cards(N, M, K):
+    max_O = min(M, K)
+
+    max_X = min(N - M, N - K)
+
+    return max_O + max_X
+
+N, M, K = map(int, input().split())
+
+print(max_matching_cards(N, M, K))
