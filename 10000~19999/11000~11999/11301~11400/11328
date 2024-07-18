@@ -1,0 +1,16 @@
+from collections import Counter
+import sys
+input = sys.stdin.readline
+
+def strfry_possible(a, b):
+    if Counter(a) == Counter(b):
+        return "Possible"
+    else:
+        return "Impossible"
+
+t = int(input().rstrip())
+
+for _ in range(t):
+    a, b = map(str, input().split())
+    result = strfry_possible(a, b)
+    print(result)
