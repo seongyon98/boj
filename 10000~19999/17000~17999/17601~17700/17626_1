@@ -1,0 +1,27 @@
+from collections import deque
+
+def min_sq(n):
+    sq = []
+    i = 1
+    while i**2 <= n:
+        sq.append(i**2)
+        i += 1
+        
+    queue = deque([(n, 0)])
+    visited = set([n])
+    
+    while queue:
+        r, cnt = queue.popleft()
+        if r == 0:
+            return cnt
+        
+        for s in sq:
+            nxt = r - s
+            if nxt >= 0 and nxt not in visited:
+                visited.add(nxt)
+                queue.append((nxt, cnt+1))
+                
+    return n
+
+n = int(input())
+print(min_sq(n))
