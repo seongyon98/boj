@@ -1,0 +1,18 @@
+import sys
+input = sys.stdin.readline
+
+n = int(input().rstrip())
+
+cnt = 0
+if n % 5 == 0:
+    cnt = n // 5
+elif n < 5 and n % 2 == 0:
+    cnt = n // 2
+elif n >= 5 and (n % 5) % 2 == 0:
+    cnt = ((n // 5) + (n % 5 // 2))
+elif n >= 5 and (n % 5) % 2 != 0:
+    cnt = ((n // 5 - 1) + ((n % 5 + 5) // 2))
+else:
+    cnt = -1
+    
+print(cnt)
