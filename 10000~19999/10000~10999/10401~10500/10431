@@ -1,0 +1,25 @@
+import sys
+input = sys.stdin.readline
+
+def lineup(tc):
+    c_num = tc[0]
+    heights = tc[1:]
+    line = []
+    cnt = 0
+    
+    for h in heights:
+        p = len(line)
+        for i in range(len(line)):
+            if line[i] > h:
+                p = i
+                break
+        
+        cnt += len(line) - p
+        line.insert(p, h)
+        
+    print(c_num, cnt)
+    
+t = int(input().rstrip())
+for _ in range(t):
+    tc = list(map(int, input().split()))
+    lineup(tc)
