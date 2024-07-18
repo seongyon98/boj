@@ -1,0 +1,24 @@
+import heapq
+import sys
+
+def max_heap(arr):
+    heap = []
+    
+    for a in arr:
+        if a != 0:
+            heapq.heappush(heap, -a)
+        else:
+            if heap:
+                print(-heapq.heappop(heap))
+            else:
+                print(0)
+                
+n = int(sys.stdin.readline().rstrip())
+
+arr = []
+
+for _ in range(n):
+    x = int(sys.stdin.readline().rstrip())
+    arr.append(x)
+    
+max_heap(arr)
