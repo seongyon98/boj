@@ -1,0 +1,11 @@
+import sys
+input = sys.stdin.readline
+
+n = int(input().rstrip())
+tickets = set(map(int, input().split()))
+
+t = 1
+while t in tickets:
+    t += 1
+    
+print(t)
