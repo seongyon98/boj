@@ -1,0 +1,15 @@
+def backtrack(arr, visited, n, m, start):
+    if len(arr) == m:
+        print(' '.join(map(str, arr)))
+        
+    for i in range(start, n+1):
+        if not visited[i]:
+            visited[i] = True
+            arr.append(i)
+            backtrack(arr, visited, n, m, i+1)
+            visited[i] = False
+            arr.pop()
+            
+n, m = map(int, input().split())
+visited = [False] * (n+1)
+backtrack([], visited, n, m, 1)

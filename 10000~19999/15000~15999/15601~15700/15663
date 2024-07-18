@@ -1,0 +1,20 @@
+def backtrack(memo, nums, arr, m):
+    if m == 0:
+        arr_str = " ".join(map(str, arr))
+        if arr_str not in memo:
+            memo.add(arr_str)
+            print(arr_str)
+        return
+    
+    used = set()
+    
+    for i, x in enumerate(nums):
+        if x not in used:
+            used.add(x)
+            backtrack(memo, nums[:i]+nums[i+1:], arr+[x], m-1)
+
+n, m = map(int, input().split())
+
+nums = sorted(list(map(int, input().split())))
+
+backtrack(set(),nums, [], m)

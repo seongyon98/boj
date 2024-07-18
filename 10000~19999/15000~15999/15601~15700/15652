@@ -1,0 +1,11 @@
+def backtrack(arr, start, n, m):
+    if len(arr) == m:
+        print(' '.join(map(str, arr)))
+        return
+    else:    
+        for i in range(start, n+1):
+            backtrack(arr+[i], i, n, m)
+            
+n, m = map(int, input().split())
+
+backtrack([], 1, n, m)

@@ -1,0 +1,16 @@
+def backtrack(arr, result, start, m):
+    if m == 0:
+        print(' '.join(map(str, result)))
+        return
+    
+    prev_num = -1
+    for i in range(start, len(arr)):
+        if arr[i] != prev_num:
+            backtrack(arr, result + [arr[i]], i, m - 1)
+            prev_num = arr[i]
+            
+n, m = map(int, input().split())
+arr = list(map(int, input().split()))
+arr.sort()
+
+backtrack(arr, [], 0, m)

@@ -1,0 +1,14 @@
+def backtrack(nums, arr, m):
+    if m == 0:
+        arr_str = " ".join(map(str, arr))
+        print(arr_str)
+        return
+    
+    for i, x in enumerate(nums):
+        backtrack(nums[:i] + nums[i+1:], arr+[x], m-1)
+
+n, m = map(int, input().split())
+
+nums = sorted(list(map(int, input().split())))
+
+backtrack(nums, [], m)

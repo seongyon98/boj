@@ -1,0 +1,35 @@
+import itertools
+import sys
+input = sys.stdin.readline
+
+def chicken_distance(houses, chickens):
+    total = 0
+    for hr, hc in houses:
+        min_dist = float('inf')
+        for cr, cc in chickens:
+            distance = abs(hr-cr) + abs(hc-cc)
+            min_dist = min(min_dist, distance)
+        total += min_dist
+    return total
+
+n, m = map(int, input().split())
+city = []
+for _ in range(n):
+    row = list(map(int, input().split()))
+    city.append(row)
+    
+houses = []
+chickens = []
+for r in range(n):
+    for c in range(n):
+        if city[r][c] == 1:
+            houses.append((r, c))
+        elif city[r][c] == 2:
+            chickens.append((r, c))
+            
+min_chicken = float('inf')
+for combo in itertools.combinations(chickens, m):
+    cur = chicken_distance(houses, combo)
+    min_chicken = min(min_chicken, cur)
+    
+print(min_chicken)

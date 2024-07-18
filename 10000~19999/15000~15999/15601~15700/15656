@@ -1,0 +1,15 @@
+def backtrack(nums, arr, m):
+    if m == 0:
+        print(" ".join(map(str, arr)))
+        return
+    
+    for x in nums:
+        arr.append(x)
+        backtrack(nums, arr, m - 1)
+        arr.pop()
+
+n, m = map(int, input().split())
+
+nums = sorted(list(map(int, input().split())))
+
+backtrack(nums, [], m)
