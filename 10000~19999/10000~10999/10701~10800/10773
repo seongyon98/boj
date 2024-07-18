@@ -1,0 +1,13 @@
+import sys
+
+k = int(sys.stdin.readline().rstrip())
+numbers = []
+
+for i in range(k):
+    n = int(sys.stdin.readline().rstrip())
+    if n == 0:
+        numbers.pop()
+    else:
+        numbers.append(n)
+    
+print(sum(numbers))
