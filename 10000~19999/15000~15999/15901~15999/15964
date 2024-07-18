@@ -1,0 +1,7 @@
+import sys
+
+a, b = map(int, sys.stdin.readline().split())
+
+cal = (a+b)*(a-b)
+
+print(cal)
