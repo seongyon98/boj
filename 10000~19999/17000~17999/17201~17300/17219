@@ -1,0 +1,16 @@
+import sys
+
+n, m = map(int, sys.stdin.readline().split())
+
+sites = {}
+
+for _ in range(n):
+    site, pw = sys.stdin.readline().split()
+    sites[site] = pw
+    
+for _ in range(m):
+    quiz = sys.stdin.readline().rstrip()
+    
+    if quiz in sites:
+        print(sites[quiz])
+        
