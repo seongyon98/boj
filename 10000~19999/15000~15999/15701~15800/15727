@@ -1,0 +1,12 @@
+import sys
+input = sys.stdin.readline
+
+l = int(input().rstrip())
+
+q = l//5
+r = l%5
+
+if r == 0:
+    print(q)
+else:
+    print(q+1)
