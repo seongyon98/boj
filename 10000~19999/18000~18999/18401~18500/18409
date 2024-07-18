@@ -1,0 +1,10 @@
+n = int(input())
+s = input()
+
+chars = ['a', 'e', 'i', 'o', 'u']
+cnt = 0
+for char in s.lower():
+    if char in chars:
+        cnt += 1
+        
+print(cnt)
