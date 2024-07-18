@@ -1,0 +1,17 @@
+def pgn_fall(arr):
+    idx = arr.index(-1)
+    
+    l = arr[:idx]
+    r = arr[idx+1:]
+    
+    min_l = min(l)
+    min_r = min(r)
+
+    total = min_l + min_r
+    
+    return total
+
+n = int(input())
+arr = list(map(int, input().split()))
+
+print(pgn_fall(arr))
