@@ -1,0 +1,10 @@
+def fly_dist(s, t, d):
+    coll = d // (2 * s)
+    dist = coll * t
+    
+    return dist
+
+s, t, d = map(int, input().split())
+f = fly_dist(s, t, d)
+
+print(f)

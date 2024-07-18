@@ -1,0 +1,8 @@
+n = input().strip()
+mod = 20000303
+result = 0
+
+for char in n:
+    result = (result * 10 + int(char)) % mod
+
+print(result)
