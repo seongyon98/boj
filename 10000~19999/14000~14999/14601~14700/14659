@@ -1,0 +1,21 @@
+def most_kills(p):
+    max_h = 0
+    cnt = 0
+    kill = []
+    
+    for h in p:
+        if h < max_h:
+            cnt += 1
+        else:
+            max_h = h
+            kill.append(cnt)
+            cnt = 0
+            
+    kill.append(cnt)
+    return kill
+
+n = int(input())
+p = list(map(int, input().split()))
+result = most_kills(p)
+
+print(max(result))

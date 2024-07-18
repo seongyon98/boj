@@ -1,0 +1,9 @@
+n = int(input())
+sts = list(map(int, input().split()))
+
+st = 0
+for i in range(n):
+    if sts[i] != (i+1):
+        st += 1
+
+print(st)

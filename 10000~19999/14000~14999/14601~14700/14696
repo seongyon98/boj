@@ -1,0 +1,25 @@
+from collections import Counter
+import sys
+input = sys.stdin.readline
+
+n = int(input().rstrip())
+
+for _ in range(n):
+    dataA = list(map(int, input().split()))
+    numA = dataA[0]
+    countA = Counter(dataA[1:numA+1])
+    
+    dataB = list(map(int, input().split()))
+    numB = dataB[0]
+    countB = Counter(dataB[1:numB+1])
+        
+    result = 'D'
+    for shape in range(4, 0, -1):
+        if countA[shape] > countB[shape]:
+            result = 'A'
+            break
+        elif countA[shape] < countB[shape]:
+            result = 'B'
+            break
+    
+    print(result)
