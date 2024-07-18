@@ -1,0 +1,36 @@
+import sys
+input = sys.stdin.readline
+
+def cnct_cpt(n, edges):
+    gph = [[] for _ in range(n + 1)]
+    for u, v in edges:
+        gph[u].append(v)
+        gph[v].append(u)
+
+    v = [False] * (n + 1)
+
+    def dfs(node):
+        stk = [node]
+        while stk:
+            crt = stk.pop()
+            for nbr in gph[crt]:
+                if not v[nbr]:
+                    v[nbr] = True
+                    stk.append(nbr)
+
+    c = 0
+    for node in range(1, n+1):
+        if not v[node]:
+            c += 1
+            v[node] = True
+            dfs(node)
+
+    return c
+
+n, m = map(int, input().split())
+edges = []
+for i in range(m):
+    u, v = map(int, input().split())
+    edges.append((u, v))
+
+print(cnct_cpt(n, edges))

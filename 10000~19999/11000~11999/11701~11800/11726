@@ -1,0 +1,18 @@
+import sys
+
+n = int(sys.stdin.readline().rstrip())
+
+tiles = [0] * (n+3)
+
+tiles[0] = 0
+tiles[1] = 1
+tiles[2] = 2
+
+if n <= 2:
+    print(tiles[n])
+    
+else:    
+    for i in range(3, n+1):
+        tiles[i] = (tiles[i-1] + tiles[i-2]) % 10007
+
+    print(tiles[n])

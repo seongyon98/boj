@@ -1,0 +1,16 @@
+import sys
+input = sys.stdin.readline
+
+def hanoi(n, start, end, via):
+    if n == 1:
+        print(f"{start} {end}")
+    else:
+        hanoi(n-1, start, via, end)
+        print(f"{start} {end}")
+        hanoi(n-1, via, end, start)
+
+
+n = int(input().rstrip())
+k = 2**n - 1
+print(k)
+hanoi(n, 1, 3, 2)

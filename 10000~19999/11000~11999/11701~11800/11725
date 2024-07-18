@@ -1,0 +1,30 @@
+from collections import defaultdict
+
+def find_parent(tree, root):
+    parents = [-1] * (len(tree) + 1)
+    visited = [False] * (len(tree) + 1)
+    stack = [root]
+    visited[root] = True
+    
+    while stack:
+        node = stack.pop()
+        for neighbor in tree[node]:
+            if not visited[neighbor]:
+                parents[neighbor] = node
+                visited[neighbor] = True
+                stack.append(neighbor)
+    
+    return parents
+
+n = int(input())
+tree = defaultdict(list)
+
+for _ in range(n-1):
+    u, v = map(int, input().split())
+    tree[u].append(v)
+    tree[v].append(u)
+
+parents = find_parent(tree, 1)
+
+for i in range(2, n+1):
+        print(parents[i])
