@@ -1,0 +1,19 @@
+def calculate_ages(b_year, b_month, b_day, c_year, c_month, c_day):
+    if (c_month > b_month) or (c_month == b_month and c_day >= b_day):
+        full_age = c_year - b_year
+    else:
+        full_age = c_year - b_year - 1
+        
+    korean_age = c_year - b_year + 1
+    
+    year_age = c_year - b_year
+    
+    return full_age, korean_age, year_age
+
+b_year, b_month, b_day = map(int, input().split())
+c_year, c_month, c_day = map(int, input().split())
+
+ages = calculate_ages(b_year, b_month, b_day, c_year, c_month, c_day)
+
+for age in ages:
+    print(age)
