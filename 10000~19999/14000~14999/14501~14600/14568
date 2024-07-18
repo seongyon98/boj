@@ -1,0 +1,16 @@
+def count_ways(n):
+    cnt = 0
+
+    for B in range(1, n - 1):
+        A = B + 2
+        while A < n:
+            C = n - A - B
+            if C > 0 and C % 2 == 0:
+                cnt += 1
+            A += 1
+
+    return cnt
+
+n = int(input())
+
+print(count_ways(n))

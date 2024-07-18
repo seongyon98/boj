@@ -1,0 +1,7 @@
+fan = ':fan:'
+
+text = input()
+
+print(f"{fan}{fan}{fan}")
+print(f"{fan}:{text}:{fan}")
+print(f"{fan}{fan}{fan}")
