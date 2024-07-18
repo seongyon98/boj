@@ -1,0 +1,11 @@
+import itertools
+
+def pr_perm(n):
+    nums = list(range(1, n+1))
+    perms = itertools.permutations(nums)
+    
+    for p in perms:
+        print(*p)
+
+n = int(input())
+pr_perm(n)
