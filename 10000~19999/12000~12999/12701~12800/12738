@@ -1,0 +1,26 @@
+import bisect
+import sys
+input = sys.stdin.readline
+
+def longest_increasing(sequence):
+    if not sequence:
+        return 0
+
+    lis = []
+
+    for num in sequence:
+        pos = bisect.bisect_left(lis, num)
+
+        if pos == len(lis):
+            lis.append(num)
+        else:
+            lis[pos] = num
+
+    return len(lis)
+
+n = int(input().rstrip())
+a = list(map(int, input().split()))
+
+result = longest_increasing(a)
+
+print(result)
