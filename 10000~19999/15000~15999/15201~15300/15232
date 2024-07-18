@@ -1,0 +1,8 @@
+import sys
+input = sys.stdin.readline
+
+r = int(input().rstrip())
+c = int(input().rstrip())
+
+for _ in range(r):
+    print('*'*c)
