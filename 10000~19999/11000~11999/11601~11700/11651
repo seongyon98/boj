@@ -1,0 +1,11 @@
+n = int(input())
+dots = []
+
+for i in range(n):
+    x, y = map(int, input().split())
+    dots.append((x, y))
+    
+sorted_dots = sorted(dots, key=lambda a: (a[1], a[0]))
+
+for d in sorted_dots:
+    print(d[0], d[1])
