@@ -1,0 +1,5 @@
+s = input()
+n = int(input())
+mbti = [input() for _ in range(n)]
+
+print(mbti.count(s))
