@@ -1,0 +1,13 @@
+def calculate_total_time(button_presses):
+    total_time = 0
+    group_count = button_presses // 5
+    remaining_presses = button_presses % 5
+    
+    total_time += group_count * (5 * (30 + (30 + (group_count - 1) * 30)) // 2)
+    total_time += remaining_presses * (30 + (group_count * 30))
+    
+    return total_time
+
+button_presses = int(input())
+total_time = calculate_total_time(button_presses)
+print(total_time)
