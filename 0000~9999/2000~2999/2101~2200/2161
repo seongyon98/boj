@@ -1,0 +1,14 @@
+from collections import deque
+
+def cards_simul(n):
+    cards = deque(range(1, n+1))
+    discarded = []
+    
+    while len(cards) > 1:
+        discarded.append(cards.popleft())
+        cards.append(cards.popleft())
+        
+    print(*discarded, cards[0])
+    
+n = int(input())
+cards_simul(n)
