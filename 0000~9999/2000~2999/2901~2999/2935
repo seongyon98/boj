@@ -1,0 +1,11 @@
+import sys
+input = sys.stdin.readline
+
+a = int(input().rstrip())
+op = input().rstrip()
+b = int(input().rstrip())
+
+if op == '+':
+    print(a+b)
+else:
+    print(a*b)

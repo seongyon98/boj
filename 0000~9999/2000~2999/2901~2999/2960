@@ -1,0 +1,19 @@
+def kth_dltd_n(N, K):
+
+    is_prime = [True] * (N + 1)
+    primes = []
+
+    for num in range(2, N + 1):
+        if is_prime[num]:
+            for m in range(num, N + 1, num):
+                if is_prime[m]:
+                    is_prime[m] = False
+                    primes.append(m)
+
+    return primes[K - 1]
+
+N, K = map(int, input().split())
+
+result = kth_dltd_n(N, K)
+
+print(result)

@@ -1,0 +1,9 @@
+total = []
+for _ in range(5):
+    scores = list(map(int, input().split()))
+    total.append(sum(scores))
+
+max_score = max(total)
+winner_idx = total.index(max_score) + 1
+
+print(winner_idx, max_score)
