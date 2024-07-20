@@ -1,0 +1,21 @@
+def dfs(graph, start, visited):
+    visited.add(start)
+    for neighbor in graph[start]:
+        if neighbor not in visited:
+            dfs(graph, neighbor, visited)
+                        
+n = int(input())
+
+network = int(input())
+
+graph = {i: set() for i in range(1, n+1)}
+
+for _ in range(network):
+    com1, com2 = map(int, input().split())
+    graph[com1].add(com2)
+    graph[com2].add(com1)
+    
+virus = set()
+dfs(graph, 1, virus)
+virus.discard(1)       
+print(len(virus))
