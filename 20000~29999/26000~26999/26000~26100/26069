@@ -1,0 +1,19 @@
+import sys
+input = sys.stdin.readline
+
+def rainbow_dancers(n, meetings):
+    rainbow = set()
+    rainbow.add("ChongChong")
+    
+    for m in meetings:
+        a, b = m
+        if a in rainbow or b in rainbow:
+            rainbow.add(a)
+            rainbow.add(b)
+    
+    return len(rainbow)
+
+n = int(input().strip())
+meetings = [input().split() for _ in range(n)]
+
+print(rainbow_dancers(n, meetings))
