@@ -1,0 +1,21 @@
+import sys
+input = sys.stdin.readline
+
+k, n = map(int, input().split())
+lengths = []
+for _ in range(k):
+    line = int(input())
+    lengths.append(line)
+    
+low, high = 1, max(lengths)
+
+while low <= high:
+    mid = (low + high) // 2
+    count = sum(length // mid for length in lengths)
+    
+    if count >= n:
+        low = mid + 1
+    else:
+        high = mid - 1
+    
+print(high)
