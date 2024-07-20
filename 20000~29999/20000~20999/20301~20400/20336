@@ -1,0 +1,20 @@
+import random
+import sys
+input = sys.stdin.readline
+
+n = int(input().strip())
+set_menus = []
+for _ in range(n):
+    set_menu = input().strip()
+
+    parts = set_menu.split()
+    d = int(parts[0])
+    foods = parts[1:]
+    set_menus.append((d, foods))
+
+choice = random.choice(set_menus)
+
+print(choice[0])
+
+for m in choice[1]:
+    print(m)
