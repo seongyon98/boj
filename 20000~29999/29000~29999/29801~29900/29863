@@ -1,0 +1,7 @@
+sleep_hour = int(input())
+wake_hour = int(input())
+
+if sleep_hour > 3:
+    print(24-sleep_hour+wake_hour)
+else:
+    print(wake_hour-sleep_hour)
