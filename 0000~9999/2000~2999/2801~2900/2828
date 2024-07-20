@@ -1,0 +1,26 @@
+def basket(m, apple):
+    l = 1
+    r = m
+    total = 0
+
+    for pos in apple:
+        if l <= pos <= r:
+            continue
+        elif pos < l:
+            move = l - pos
+            total += move
+            l -= move
+            r -= move
+        elif pos > r:
+            move = pos - r
+            total += move
+            l += move
+            r += move
+
+    return total
+
+n, m = map(int, input().split())
+j = int(input())
+apple = [int(input()) for _ in range(j)]
+
+print(basket(m, apple))
