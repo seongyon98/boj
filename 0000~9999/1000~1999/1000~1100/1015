@@ -1,0 +1,15 @@
+def permutation(n, A):
+    idx_A = [(A[i], i) for i in range(n)]
+    idx_A.sort()
+    
+    p = [0] * n
+    for idx, (_, org) in enumerate(idx_A):
+        p[org] = idx
+        
+    return p
+
+n = int(input())
+A = list(map(int, input().split()))
+
+p = permutation(n, A)
+print(*p)
