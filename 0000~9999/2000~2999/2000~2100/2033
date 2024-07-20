@@ -1,0 +1,22 @@
+import sys
+input = sys.stdin.readline
+
+def custom_round(n, divisor):
+    lower = (n // divisor) * divisor
+    higher = lower + divisor
+    
+    if n - lower >= higher - n:
+        return higher
+    else:
+        return lower
+    
+def round_by_place(n):
+    place = 10
+    while n >= place:
+        n = custom_round(n, place)
+        place *= 10
+        
+    return n
+
+n = int(input().rstrip())
+print(round_by_place(n))
