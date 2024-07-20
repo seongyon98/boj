@@ -1,0 +1,13 @@
+from collections import Counter
+import sys
+input = sys.stdin.readline
+
+n, m = map(int, input().split())
+words = [input().strip() for _ in range(n)]
+
+word_cnt = Counter(words)
+filtered_words = [word for word in word_cnt if len(word) >= m]
+sorted_words = sorted(filtered_words, key=lambda word: (-word_cnt[word], -len(word), word))
+
+for word in sorted_words:
+    print(word)
