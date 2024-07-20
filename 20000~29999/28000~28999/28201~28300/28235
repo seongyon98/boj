@@ -1,0 +1,9 @@
+command = input()
+if command == 'SONGDO':
+    print('HIGHSCHOOL')
+elif command == 'CODE':
+    print('MASTER')
+elif command == '2023':
+    print('0611')
+else:
+    print('CONTEST')
