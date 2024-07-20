@@ -1,0 +1,11 @@
+n = int(input())
+result = []
+for _ in range(n):
+    scores = list(map(int, input().split()))
+    run_s = max(scores[0], scores[1])
+    sorted_s = sorted(scores[2:], reverse=True)
+    trick_s = sorted_s[0] + sorted_s[1]
+    total_s = run_s + trick_s
+    result.append(total_s)
+    
+print(max(result))
