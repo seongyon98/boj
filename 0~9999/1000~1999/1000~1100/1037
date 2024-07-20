@@ -1,0 +1,13 @@
+import sys
+
+n = int(sys.stdin.readline().rstrip())
+
+d = map(int, sys.stdin.readline().split())
+
+divisors = [int(divisor) for divisor in d]
+
+divisors.sort()
+
+num = divisors[0] * divisors[-1]
+
+print(num)
