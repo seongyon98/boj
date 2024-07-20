@@ -1,0 +1,17 @@
+import re
+import sys
+input = sys.stdin.readline
+
+N = int(input().strip())
+
+result = []
+for _ in range(N):
+    s = input().strip()
+    found_numbers = re.findall(r'\d+', s)
+    for number in found_numbers:
+        result.append(int(number))
+
+result.sort()
+
+for num in result:
+    print(num)
