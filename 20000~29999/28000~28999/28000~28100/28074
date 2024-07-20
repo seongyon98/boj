@@ -1,0 +1,22 @@
+import sys
+input = sys.stdin.readline
+
+def mobis(string):
+    mobis_letters = ['M', 'O', 'B', 'I', 'S']
+    
+    letter_cnt = {}
+    for letter in string:
+        if letter in letter_cnt:
+            letter_cnt[letter] += 1
+        else:
+            letter_cnt[letter] = 1
+            
+    for letter in mobis_letters:
+        if letter not in letter_cnt or letter_cnt[letter] == 0:
+            return 'NO'
+        else:
+            letter_cnt[letter] -= 1
+    return 'YES'
+
+string = input().strip()
+print(mobis(string))
