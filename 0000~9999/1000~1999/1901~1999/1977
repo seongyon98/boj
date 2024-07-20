@@ -1,0 +1,25 @@
+import math
+
+def find_sum_min(m, n):
+    total = 0
+    min_square = None
+    
+    for num in range(math.ceil(math.sqrt(m)), math.isqrt(n)+1):
+        square = num*num
+        if square <= n:
+            total += square
+            if min_square is None:
+                min_square = square
+
+    return total, min_square
+
+m = int(input())
+n = int(input())
+
+total, min_square = find_sum_min(m, n)
+
+if min_square is None:
+    print(-1)
+else:
+    print(total)
+    print(min_square)
