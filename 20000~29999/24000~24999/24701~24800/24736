@@ -1,0 +1,7 @@
+at, af, a_s, ap, ac = map(int, input().split())
+bt, bf, bs, bp, bc = map(int, input().split())
+
+a_score = at*6 + af*3 + a_s*2 + ap + ac*2
+b_score = bt*6 + bf*3 + bs*2 + bp + bc*2
+
+print(a_score, b_score)
