@@ -1,0 +1,9 @@
+s = input()
+groups = [s[0]]
+for i in range(1, len(s)):
+    if s[i] != s[i-1]:
+        groups.append(s[i])
+        
+min_flips = min(groups.count('0'), groups.count('1'))
+
+print(min_flips)
