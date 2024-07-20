@@ -1,0 +1,14 @@
+def seq(n):
+    s = []
+    for i in range(n):
+        if i % 2 == 0:
+            s.append(1)
+        else:
+            s.append(2)
+    if n % 2 != 0:
+        s[-1] = 3
+    return s
+
+n = int(input())
+
+print(*seq(n))
