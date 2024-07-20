@@ -1,0 +1,26 @@
+import sys
+input = sys.stdin.readline
+
+def check_promises(promises):
+    original_promises = {
+        "Never gonna give you up",
+        "Never gonna let you down",
+        "Never gonna run around and desert you",
+        "Never gonna make you cry",
+        "Never gonna say goodbye",
+        "Never gonna tell a lie and hurt you",
+        "Never gonna stop"
+    }
+    
+    for p in promises:
+        if p not in original_promises:
+            return "Yes"
+
+    return "No"
+
+promises = []
+n = int(input().rstrip())
+for _ in range(n):
+    promises.append(input().rstrip())
+
+print(check_promises(promises))
