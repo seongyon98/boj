@@ -1,0 +1,10 @@
+import sys
+input = sys.stdin.readline
+
+case_number = 1
+while True:
+    nums = list(map(int, input().split()))
+    if len(nums) == 1 and nums[0] == 0:
+        break
+    print("Case {}: Sorting... done!".format(case_number))
+    case_number += 1
