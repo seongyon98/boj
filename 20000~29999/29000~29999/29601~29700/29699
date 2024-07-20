@@ -1,0 +1,9 @@
+repeated_string = "WelcomeToSMUPC"
+
+n = int(input())
+idx = n % len(repeated_string)
+
+if idx == 0:
+    idx = len(repeated_string)
+    
+print(repeated_string[idx-1])
