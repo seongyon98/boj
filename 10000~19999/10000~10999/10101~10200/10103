@@ -1,0 +1,14 @@
+N = int(input())
+
+c = 100
+s = 100
+
+for _ in range(N):
+    c_d, s_d = map(int, input().split())
+    if c_d > s_d:
+        s -= c_d
+    elif c_d < s_d:
+        c -= s_d
+
+print(c)
+print(s)
