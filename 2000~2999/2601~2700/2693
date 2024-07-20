@@ -1,9 +1,0 @@
-import sys
-input = sys.stdin.readline
-
-t = int(input().rstrip())
-
-for _ in range(t):
-    arr = list(map(int, input().split()))
-    arr.sort()
-    print(arr[-3])

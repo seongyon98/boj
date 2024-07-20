@@ -1,9 +1,0 @@
-l, p = map(int, input().split())
-participants = list(map(int, input().split()))
-
-result = []
-
-for pt in participants:
-    result.append(pt-l*p)
-    
-print(*result)

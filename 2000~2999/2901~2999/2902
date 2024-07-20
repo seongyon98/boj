@@ -1,5 +1,0 @@
-s = input()
-words = s.split('-')
-initials = "".join(word[0] for word in words)
-
-print(initials)
