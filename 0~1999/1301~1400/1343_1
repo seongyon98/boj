@@ -1,5 +1,0 @@
-board = input()
-board = board.replace('X'*4, 'A'*4)
-board = board.replace('XX', 'BB')
-
-print(-1 if 'X' in board else board)

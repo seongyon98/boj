@@ -1,9 +1,0 @@
-def break_even_point(a, b, c):
-    if c <= b:
-        return -1
-    return a//(c-b) + 1
-
-a, b, c = map(int, input().split())
-
-count = break_even_point(a, b, c)
-print(count)
