@@ -1,0 +1,8 @@
+def last_remaining(n):
+    power = 1
+    while power <= n:
+        power <<= 1
+    return power >> 1
+
+n = int(input())
+print(last_remaining(n))
