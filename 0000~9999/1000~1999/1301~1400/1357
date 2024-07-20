@@ -1,0 +1,10 @@
+def rev(i):
+    reversed = int(str(i)[::-1])
+    return reversed
+
+x, y = map(int, input().split())
+rev_x = rev(x)
+rev_y = rev(y)
+total = rev_x + rev_y
+
+print(rev(total))
