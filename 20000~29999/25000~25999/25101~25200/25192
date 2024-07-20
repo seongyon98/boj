@@ -1,0 +1,19 @@
+import sys
+
+chatter = set()
+greeting = 0
+
+n = int(sys.stdin.readline().rstrip())
+    
+for i in range(n):
+    chat = sys.stdin.readline().rstrip()
+        
+    if chat == 'ENTER':
+        greeting += len(chatter)
+        chatter = set()
+    else:
+        chatter.add(chat)
+        
+greeting += len(chatter)
+
+print(greeting)
