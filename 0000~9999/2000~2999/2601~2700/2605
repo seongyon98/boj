@@ -1,0 +1,14 @@
+def final_order(n, draws):
+    order = [1]
+    
+    for i in range(1, n):
+        position = draws[i]
+        insert_position = i - position
+        order.insert(insert_position, i+1)
+    return order
+
+n = int(input())
+draws = list(map(int, input().split()))
+
+result = final_order(n, draws)
+print(*result)
