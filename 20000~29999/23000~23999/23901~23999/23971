@@ -1,0 +1,7 @@
+def max_participants(h, w, n, m):
+    rows = (h + n) // (n + 1)
+    cols = (w + m) // (m + 1)
+    return rows * cols
+
+h, w, n, m = map(int, input().split())
+print(max_participants(h, w, n, m))
