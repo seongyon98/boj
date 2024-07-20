@@ -1,0 +1,13 @@
+cards = {'STRAWBERRY':0, 'BANANA':0, 'LIME':0, 'PLUM':0}
+
+n = int(input())
+for _ in range(n):
+    fruit, num = input().split()
+    num = int(num)
+    if fruit in cards:
+        cards[fruit] += num
+        
+if any(cnt == 5 for cnt in cards.values()):
+    print("YES")
+else:
+    print("NO")
