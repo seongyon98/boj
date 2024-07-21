@@ -1,0 +1,12 @@
+n = int(input())
+menu = []
+for _ in range(n):
+    menu.append(int(input()))
+
+m = int(input())
+total = 0
+for _ in range(m):
+    a = int(input())
+    total +=menu[a-1]
+    
+print(total)
