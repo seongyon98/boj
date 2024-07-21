@@ -1,0 +1,13 @@
+import sys
+input = sys.stdin.readline
+
+t = int(input().rstrip())
+
+print('Gnomes:')
+
+for _ in range(t):
+    beards = list(map(int, input().split()))
+    if beards == sorted(beards) or beards == sorted(beards, reverse=True):
+        print('Ordered')
+    else:
+        print('Unordered')
