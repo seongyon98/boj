@@ -1,0 +1,16 @@
+import sys
+
+n = int(sys.stdin.readline().rstrip())
+min_x, max_x = float('inf'), float('-inf')
+min_y, max_y = float('inf'), float('-inf')
+
+for i in range(n):
+    x, y = map(int, sys.stdin.readline().split())
+    min_x, max_x = min(min_x, x), max(max_x, x)
+    min_y, max_y = min(min_y, y), max(max_y, y)
+
+width = max_x - min_x
+length = max_y - min_y    
+area = width * length
+
+print(area)
