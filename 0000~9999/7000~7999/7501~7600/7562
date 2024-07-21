@@ -1,0 +1,33 @@
+from collections import deque
+import sys
+input = sys.stdin.readline
+
+def knight_moves(l, start, end):
+    if start == end:
+        return 0
+
+    dirc = [(2, 1), (2, -1), (-2, 1), (-2, -1), (1, 2), (1, -2), (-1, 2), (-1, -2)]
+    
+    visited = [[False for _ in range(l)] for _ in range(l)]
+    queue = deque([(start[0], start[1], 0)])
+    visited[start[0]][start[1]] = True
+    
+    while queue:
+        x, y, moves = queue.popleft()
+        for dx, dy in dirc:
+            nx, ny = x+dx, y+dy
+            if 0 <= nx < l and 0 <= ny < l and not visited[nx][ny]:
+                if (nx, ny) == end:
+                    return moves + 1
+                visited[nx][ny] = True
+                queue.append((nx, ny, moves+1))
+    return -1
+
+t = int(input().rstrip())
+
+for _ in range(t):
+    l = int(input().rstrip())
+    start = tuple(map(int, input().split()))
+    end = tuple(map(int, input().split()))
+    result = knight_moves(l, start, end)
+    print(result)
