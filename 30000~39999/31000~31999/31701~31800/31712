@@ -1,0 +1,25 @@
+def hunt_time(cu, du, cd, dd, cp, dp, h):
+    attacks = [(cu, du), (cd, dd), (cp, dp)]
+    attacks.sort(key=lambda x: x[0])
+    
+    time = 0
+    while h > 0:
+        time += 1
+        for attack in attacks:
+            if time % attack[0] == 0:
+                h -= attack[1]
+                if h <= 0:
+                    break
+
+    return time
+
+cu, du = map(int, input().split())
+cd, dd = map(int, input().split())
+cp, dp = map(int, input().split())
+h = int(input())
+
+h -= (du + dd + dp)
+
+total_time = hunt_time(cu, du, cd, dd, cp, dp, h)
+
+print(total_time)
