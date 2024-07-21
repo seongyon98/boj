@@ -1,0 +1,21 @@
+def enlarge_pattern(K):
+    original_pattern = [
+        "G...",
+        ".I.T",
+        "..S."
+    ]
+    
+    enlarged_pattern = []
+    
+    for row in original_pattern:
+        for _ in range(K):
+            enlarged_row = ""
+            for char in row:
+                enlarged_row += char * K
+            enlarged_pattern.append(enlarged_row)
+    
+    for row in enlarged_pattern:
+        print(row)
+
+K = int(input())
+enlarge_pattern(K)
