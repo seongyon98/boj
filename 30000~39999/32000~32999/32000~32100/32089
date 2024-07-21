@@ -1,0 +1,14 @@
+import sys
+input = sys.stdin.readline
+
+while True:
+    n = int(input().strip())
+    if n == 0:
+        break
+    pp = list(map(int, input().split()))
+    max_pp = 0
+
+    for i in range(0, n-2):
+        max_pp = max_pp if sum(pp[i:i+3]) < max_pp else sum(pp[i:i+3])
+
+    print(max_pp)
