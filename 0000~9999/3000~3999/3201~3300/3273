@@ -1,0 +1,17 @@
+import sys
+from bisect import bisect_left
+
+n = int(sys.stdin.readline().rstrip())
+a = list(map(int, sys.stdin.readline().split()))
+x = int(sys.stdin.readline().rstrip())
+
+count = 0
+a.sort()
+
+for i in range(n):
+    t = x - a[i]
+    idx = bisect_left(a, t, i+1)
+    if idx < n and a[idx] == t:
+            count += 1
+            
+print(count)
