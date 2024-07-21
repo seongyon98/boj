@@ -1,0 +1,14 @@
+def find_team_name(team_name):
+    upper_count = sum(1 for char in team_name if char.isupper())
+    lower_count = sum(1 for char in team_name if char.islower())
+    return lower_count >= upper_count and len(team_name) <= 10 and any(char.isalpha() for char in team_name)
+    
+N = int(input())
+team_names = []
+for _ in range(N):
+    team_names.append(input())
+
+for name in team_names:
+    if find_team_name(name):
+        print(name)
+        break

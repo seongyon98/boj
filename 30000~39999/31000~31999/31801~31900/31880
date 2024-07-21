@@ -1,0 +1,12 @@
+n, m = map(int, input().split())
+total = 0
+plus = list(map(int, input().split()))
+multi = list(map(int, input().split()))
+multi_f = [x for x in multi if x != 0]
+
+for p in plus:
+    total += p
+for m in multi_f:
+    total *= m
+    
+print(total)

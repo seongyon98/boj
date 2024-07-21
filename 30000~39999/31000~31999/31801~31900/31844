@@ -1,0 +1,12 @@
+st = input().strip()
+
+robot_p = st.index('@')
+box_p = st.index('#')
+target = st.index('!')
+
+if robot_p < box_p < target:
+    print(target-robot_p-1)
+elif target < box_p < robot_p:
+    print(robot_p - target-1)
+else:
+    print(-1)

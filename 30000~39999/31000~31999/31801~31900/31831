@@ -1,0 +1,19 @@
+import sys
+input = sys.stdin.readline
+
+def days_of_pain(n, m, stress_changes):
+    stress = 0
+    pain_days = 0
+    
+    for i in range(n):
+        stress += stress_changes[i]
+        if stress < 0:
+            stress = 0
+        if stress >= m:
+            pain_days += 1
+            
+    return pain_days
+
+n, m = map(int, input().split())
+stress_changes = list(map(int, input().split()))
+print(days_of_pain(n, m, stress_changes))

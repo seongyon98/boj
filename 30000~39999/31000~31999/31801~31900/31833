@@ -1,0 +1,11 @@
+import sys
+input = sys.stdin.readline
+
+n = int(input().rstrip())
+a = list(map(int, input().split()))
+b = list(map(int, input().split()))
+
+x = int(''.join(map(str, a)))
+y = int(''.join(map(str, b)))
+
+print(min(x, y))

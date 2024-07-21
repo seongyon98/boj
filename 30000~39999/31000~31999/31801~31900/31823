@@ -1,0 +1,29 @@
+def reverse_streak(activities):
+    max_streak = 0
+    current = 0
+    
+    for a in activities:
+        if a == '.':
+            current += 1
+        else:
+            max_streak = max(max_streak, current)
+            current = 0
+    
+    max_streak = max(max_streak, current)
+    return max_streak
+
+n, m = map(int, input().split())
+members = []
+unique =set()
+for _ in range(n):
+    data = input().split()
+    name = data[-1]
+    activities = "".join(data[:-1])
+    reverse = reverse_streak(activities)
+    members.append((reverse, name))
+    unique.add(reverse)
+
+print(len(unique))
+
+for r, name in members:
+    print(r, name)

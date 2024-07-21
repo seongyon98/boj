@@ -1,0 +1,23 @@
+def process_string(s, n):
+    seen = set()
+    result = []
+    removed = 0
+    
+    for char in s:
+        if char in seen:
+            removed += 1
+        else:
+            seen.add(char)
+            result.append(char)
+            
+    result.append(str(removed+4))
+    processed_s = ''.join(result)
+    num = str(int(n)+1906)
+    final = num+processed_s
+    final = 'smupc_' + final[::-1]
+    
+    return final
+
+n, s = map(str, input().split())
+output = process_string(s, n)
+print(output)
