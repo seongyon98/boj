@@ -1,0 +1,23 @@
+import sys
+input = sys.stdin.readline
+
+def good_words(words):
+    cnt = 0
+    
+    for word in words:
+        stack = []
+        for char in word:
+            if stack and stack[-1] == char:
+                stack.pop()
+            else:
+                stack.append(char)
+                
+        if not stack:
+            cnt += 1
+            
+    return cnt
+
+n = int(input().rstrip())
+words = [input().rstrip() for _ in range(n)]
+    
+print(good_words(words))
