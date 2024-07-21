@@ -1,0 +1,15 @@
+ham = []
+bev = []
+
+for _ in range(3):
+    h = int(input())
+    ham.append(h)
+
+for _ in range(2):
+    b = int(input())
+    bev.append(b)
+    
+ham.sort()
+bev.sort()
+
+print(ham[0]+bev[0]-50)
