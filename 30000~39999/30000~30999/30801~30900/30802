@@ -1,0 +1,14 @@
+import math
+import sys
+input = sys.stdin.readline
+
+n = int(input().rstrip())
+tshirts = list(map(int, input().split()))
+t, p = map(int, input().split())
+
+ts_cnt = 0
+for size in tshirts:
+    ts_cnt += math.ceil(size / t)
+
+print(ts_cnt)
+print(n//p, n%p)
