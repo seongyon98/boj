@@ -1,0 +1,14 @@
+import sys
+input = sys.stdin.readline
+
+n = int(input())
+
+heavenly = list(range(10))
+earthly = list("ABCDEFGHIJKL")
+
+stem = (n - 1984) % 10
+branch = (n - 1984) % 12
+
+result = earthly[branch] + str(heavenly[stem])
+
+print(result)

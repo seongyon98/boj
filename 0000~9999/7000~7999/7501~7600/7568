@@ -1,0 +1,16 @@
+n = int(input())
+size = []
+
+for _ in range(n):
+    weight, height = map(int, input().split())
+    size.append((weight, height))
+
+ranks = [1]*n
+
+for i in range(n):
+    for j in range(n):
+        if i != j:
+            if size[i][0] < size[j][0] and size[i][1] < size[j][1]:
+                ranks[i] += 1
+                
+print(*ranks)
