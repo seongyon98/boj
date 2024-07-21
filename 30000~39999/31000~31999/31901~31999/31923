@@ -1,0 +1,24 @@
+N, P, Q = map(int, input().split())
+A = map(int, input().split())
+B = map(int, input().split())
+
+diff = P - Q
+cnt = []
+for a, b in zip(A, B):
+    f_diff = a - b
+    if f_diff == 0:
+        cnt.append(0)
+    else:
+        if diff == 0 or diff * f_diff > 0:
+            print("NO")
+            break
+        elif diff * f_diff < 0:
+            q, r = divmod(abs(f_diff), abs(diff))
+            if r == 0:
+                cnt.append(q)
+            else:
+                print("NO")
+                break
+else:
+    print("YES")
+    print(*cnt)

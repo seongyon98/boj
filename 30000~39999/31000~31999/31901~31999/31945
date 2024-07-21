@@ -1,0 +1,17 @@
+t = int(input())
+
+cube_faces = [[0, 1, 3, 2], [0, 1, 5, 4], [0, 2, 6, 4], [1, 3, 7, 5], [2, 3, 7, 6], [4, 5, 7, 6]]
+
+for _ in range(t):
+    indices = list(map(int, input().split()))
+
+    found = False
+    for face in cube_faces:
+        if all(i in indices for i in face):
+            found = True
+            break
+
+    if found:
+        print("YES")
+    else:
+        print("NO")

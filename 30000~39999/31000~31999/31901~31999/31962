@@ -1,0 +1,13 @@
+n, x = map(int, input().split())
+
+poss_bus = []
+
+for _ in range(n):
+    s, t = map(int, input().split())
+    if s+t <= x:
+        poss_bus.append(s)
+
+if len(poss_bus) >= 1:
+    print(max(poss_bus))
+else:
+    print(-1)
