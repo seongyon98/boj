@@ -1,0 +1,8 @@
+import sys
+input = sys.stdin.readline
+
+t = int(input().rstrip())
+for _ in range(t):
+    x = int(input().rstrip())
+    result = 2*x-1
+    print(result)
