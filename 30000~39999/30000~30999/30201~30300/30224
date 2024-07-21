@@ -1,0 +1,13 @@
+def check_luckiness(n):
+    if '7' in str(n):
+        if n % 7 == 0:
+            return 3
+        else:
+            return 2
+    elif n % 7 == 0:
+        return 1
+    else:
+        return 0
+
+n = int(input())
+print(check_luckiness(n))
