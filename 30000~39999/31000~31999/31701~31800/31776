@@ -1,0 +1,14 @@
+n = int(input())
+
+team = 0
+for _ in range(n):
+    t1, t2, t3 = map(int, input().split())
+    if t1 >= 0:
+        if t1 <= t2 and t2 <= t3:
+            team += 1
+        elif t1 <= t2 and t3 == -1:
+            team += 1
+        elif t2 == -1 and t3 == -1:
+            team += 1
+            
+print(team)

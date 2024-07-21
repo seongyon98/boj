@@ -1,0 +1,18 @@
+import sys
+input = sys.stdin.readline
+
+n = int(input().rstrip())
+x, s = map(int, input().split())
+
+can_defeat = False
+
+for _ in range(n):
+    c_i, p_i = map(int, input().split())
+    
+    if c_i <= x and p_i > s:
+        can_defeat = True
+
+if can_defeat:
+    print("YES")
+else:
+    print("NO")

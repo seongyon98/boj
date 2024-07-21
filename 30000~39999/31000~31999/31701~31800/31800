@@ -1,0 +1,35 @@
+import sys
+input = sys.stdin.readline
+
+def net_profits(n, profits, prices):
+    first = -1
+    second = -1
+    for p in profits:
+        if p > first:
+            second = first
+            first = p
+        elif p > second:
+            second = p
+        
+    nps = []
+    for i in range(n):
+        cpf = profits[i]
+        cp = prices[i]
+        
+        if cpf == first:
+            max_op = second
+        else:
+            max_op = first
+            
+        op = max_op - cp
+        np = cpf - cp - op
+        nps.append(np)
+        
+    return nps
+
+n = int(input().rstrip())
+profits = list(map(int, input().split()))
+prices = list(map(int, input().split()))
+
+nps = net_profits(n, profits, prices)
+print(*nps)
