@@ -1,0 +1,19 @@
+def find_one_pos(n):
+    binary = bin(n)[2:]
+
+    pos = []
+
+    rvd_binary = binary[::-1]
+
+    for i, bit in enumerate(rvd_binary):
+        if bit == "1":
+            pos.append(i)
+
+    return pos
+
+
+T = int(input())
+
+for _ in range(T):
+    n = int(input())
+    print(*find_one_pos(n))
