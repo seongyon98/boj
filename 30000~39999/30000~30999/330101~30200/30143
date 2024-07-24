@@ -1,0 +1,10 @@
+T = int(input())
+
+for _ in range(T):
+    n, a, d = map(int, input().split())
+
+    total = 0
+    for i in range(n):
+        total += (a+(d*i))
+
+    print(total)
