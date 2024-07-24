@@ -1,0 +1,9 @@
+def max_cows(N, W, H, L):
+    max_wdth = W // L
+    max_hgt = H // L
+    max_psb = max_wdth * max_hgt
+    return min(N, max_psb)
+
+N, W, H, L = map(int, input().split())
+
+print(max_cows(N, W, H, L))
