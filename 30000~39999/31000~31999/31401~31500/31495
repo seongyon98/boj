@@ -1,0 +1,8 @@
+i = input()
+
+if i == '""' or i == '"':
+    print("CE")
+elif i[0] == '"' and i[-1] == '"':
+    print(i[1:-1])
+else:
+    print("CE")
