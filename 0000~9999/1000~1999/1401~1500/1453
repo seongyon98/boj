@@ -1,0 +1,12 @@
+N = int(input())
+nums = list(map(int, input().split()))
+
+new_list = []
+result = 0
+for num in nums:
+    if num in new_list:
+        result += 1
+    else:
+        new_list.append(num)
+        
+print(result)
