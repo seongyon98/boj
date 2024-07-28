@@ -1,0 +1,15 @@
+scores = []
+
+for i in range(8):
+    score = int(input())
+    scores.append((i + 1, score))
+
+scores.sort(key=lambda x: x[1], reverse=True)
+
+top5 = scores[:5]
+total_score = sum(score for _, score in top5)
+nums = [i for i, _ in top5]
+nums.sort()
+
+print(total_score)
+print(*nums)
