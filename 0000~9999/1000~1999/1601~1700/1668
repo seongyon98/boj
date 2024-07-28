@@ -1,0 +1,19 @@
+N = int(input())
+T = [int(input()) for _ in range(N)]
+
+left = 0
+max_left = 0
+for h in T:
+    if h > max_left:
+        left += 1
+        max_left = h
+
+right = 0
+max_right = 0
+for h in reversed(T):
+    if h > max_right:
+        right += 1
+        max_right = h
+
+print(left)
+print(right)
