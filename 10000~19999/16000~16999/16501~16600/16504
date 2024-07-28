@@ -1,0 +1,9 @@
+N = int(input())
+
+total = 0
+
+for _ in range(N):
+    nums = list(map(int, input().split()))
+    total += sum(nums)
+
+print(total)
