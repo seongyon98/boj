@@ -1,0 +1,43 @@
+from collections import defaultdict, deque
+
+def dfs(graph, start, visited):
+    visited[start] = True
+    result = [start]
+    
+    for neighbor in sorted(graph[start]):
+        if not visited[neighbor]:
+            result.extend(dfs(graph, neighbor, visited))
+            
+    return result
+
+def bfs(graph, start, visited):
+    queue = deque([start])
+    visited[start] = True
+    result = [start]
+    
+    while queue:
+        vertex = queue.popleft()
+        
+        for neighbor in sorted(graph[vertex]):
+            if not visited[neighbor]:
+                queue.append(neighbor)
+                visited[neighbor] = True
+                result.append(neighbor)
+                
+    return result
+
+n, m, v = map(int, input().split())
+
+graph = defaultdict(list)
+for _ in range(m):
+    a, b = map(int, input().split())
+    graph[a].append(b)
+    graph[b].append(a)
+    
+visited = [False] * (n+1)
+
+dfs_result = dfs(graph, v, visited[:])
+bfs_result = bfs(graph, v, visited[:])
+
+print(*dfs_result)
+print(*bfs_result)

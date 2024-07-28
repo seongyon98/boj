@@ -1,0 +1,11 @@
+import sys
+input = sys.stdin.readline
+
+a_count, b_count = map(int, input().split())
+
+a_set = set(map(int, input().split()))
+b_set = set(map(int, input().split()))
+
+symmetric_difference = len(a_set.symmetric_difference(b_set))
+        
+print(symmetric_difference)
