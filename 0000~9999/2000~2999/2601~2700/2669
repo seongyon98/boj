@@ -1,0 +1,44 @@
+def calculate_area(rectangles):
+    events = []
+    for (x1, y1, x2, y2) in rectangles:
+        events.append((x1, y1, y2, 1))
+        events.append((x2, y1, y2, -1))
+
+    events.sort()
+
+    from collections import defaultdict
+    active_intervals = defaultdict(int)
+    
+    def calculate_active_length():
+        total_length = 0
+        current_start = -1
+        active_count = 0
+        for y in sorted(active_intervals):
+            if active_count > 0 and current_start != -1:
+                total_length += y - current_start
+            current_start = y
+            active_count += active_intervals[y]
+        return total_length
+
+    last_x = events[0][0]
+    total_area = 0
+
+    for x, y1, y2, typ in events:
+        current_length = calculate_active_length()
+        total_area += current_length * (x - last_x)
+        last_x = x
+        active_intervals[y1] += typ
+        active_intervals[y2] -= typ
+        if active_intervals[y1] == 0:
+            del active_intervals[y1]
+        if active_intervals[y2] == 0:
+            del active_intervals[y2]
+    
+    return total_area
+
+rectangles = []
+for _ in range(4):
+    x1, y1, x2, y2 = map(int, input().split())
+    rectangles.append((x1, y1, x2, y2))
+
+print(calculate_area(rectangles))

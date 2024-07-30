@@ -1,0 +1,16 @@
+def calculate_area(rectangles):
+    covered_points = set()
+
+    for x1, y1, x2, y2 in rectangles:
+        for x in range(x1, x2):
+            for y in range(y1, y2):
+                covered_points.add((x, y))
+
+    return len(covered_points)
+
+rectangles = []
+for _ in range(4):
+    x1, y1, x2, y2 = map(int, input().split())
+    rectangles.append((x1, y1, x2, y2))
+
+print(calculate_area(rectangles))
