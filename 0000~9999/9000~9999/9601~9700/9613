@@ -1,0 +1,15 @@
+import math
+from itertools import combinations
+
+def sum_of_gcds(numbers):
+    gcd_sum = 0
+    for a, b in combinations(numbers, 2):
+        gcd_sum += math.gcd(a, b)
+    return gcd_sum
+
+t = int(input())
+for _ in range(t):
+    data = list(map(int, input().split()))
+    n = data[0]
+    numbers = data[1:]
+    print(sum_of_gcds(numbers))
