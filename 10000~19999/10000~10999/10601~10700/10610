@@ -1,0 +1,17 @@
+def find_largest_multiple_of_30(N):
+    digits = list(N)
+
+    if "0" not in digits:
+        return -1
+
+    total_sum = sum(int(digit) for digit in digits)
+
+    if total_sum % 3 != 0:
+        return -1
+
+    digits.sort(reverse=True)
+    return "".join(digits)
+
+N = input().strip()
+
+print(find_largest_multiple_of_30(N))
