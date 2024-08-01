@@ -1,0 +1,13 @@
+def max_chickens(chicken, cola, beer):
+    max_cola = cola // 2
+    max_beer = beer
+
+    max_drinks = max_cola + max_beer
+    max_chicken = min(chicken, max_drinks)
+    
+    return max_chicken
+
+chicken = int(input())
+cola, beer = map(int, input().split())
+
+print(max_chickens(chicken, cola, beer))
