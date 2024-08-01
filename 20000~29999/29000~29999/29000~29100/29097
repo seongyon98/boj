@@ -1,0 +1,11 @@
+n, m, k, a, b, c = map(int, input().split())
+
+Joffrey, Robb, Stannis = a * n, b * m, c * k
+
+results = {"Joffrey": Joffrey, "Robb": Robb, "Stannis": Stannis}
+
+max_value = max(results.values())
+max_variables = sorted([key for key, value in results.items() if value == max_value])
+
+for variable in max_variables:
+    print(variable, end=" ")
