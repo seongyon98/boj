@@ -1,0 +1,25 @@
+import sys
+input = sys.stdin.readline
+
+def count_crossings(N, obs):
+    c_pos = {}
+    cnt = 0
+
+    for i in range(N):
+        cow, p = obs[i]
+        p_pos = c_pos.get(cow, None)
+
+        if p_pos is not None and p_pos != p:
+            cnt += 1
+
+        c_pos[cow] = p
+
+    return cnt
+
+N = int(input())
+obs = []
+for _ in range(N):
+    num, pos = map(int, input().split())
+    obs.append((num, pos))
+
+print(count_crossings(N, obs))
