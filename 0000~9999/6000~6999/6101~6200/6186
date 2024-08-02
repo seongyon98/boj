@@ -1,0 +1,35 @@
+from collections import deque
+import sys
+input = sys.stdin.readline
+
+def count_grass(grid, R, C):
+    dirc = [(0, 1), (0, -1), (1, 0), (-1, 0)]
+    
+    def is_valid(x, y):
+        return 0 <= x < R and 0 <= y < C and grid[x][y] == '#'
+    
+    def bfs(start_x, start_y):
+        queue = deque([(start_x, start_y)])
+        grid[start_x][start_y] = '.'
+        
+        while queue:
+            x, y = queue.popleft()
+            for dx, dy in dirc:
+                nx, ny = x + dx, y + dy
+                if is_valid(nx, ny):
+                    grid[nx][ny] = '.'
+                    queue.append((nx, ny))
+
+    count = 0
+    for i in range(R):
+        for j in range(C):
+            if grid[i][j] == '#':
+                bfs(i, j)
+                count += 1
+
+    return count
+
+R, C = map(int, input().split())
+grid = [list(input().strip()) for _ in range(R)]
+
+print(count_grass(grid, R, C))
