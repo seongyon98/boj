@@ -1,0 +1,28 @@
+from collections import Counter
+
+N = int(input())
+str1 = input()
+str2 = input()
+
+str1_cnt = Counter(str1)
+str2_cnt = Counter(str2)
+
+vowels = ["a", "e", "i", "o", "u"]
+new_str1 = ""
+for char in str1:
+    if char not in vowels:
+        new_str1 += char
+
+new_str2 = ""
+for char in str2:
+    if char not in vowels:
+        new_str2 += char
+
+if (
+    str1_cnt == str2_cnt
+    and (str1[0] == str2[0] and str1[-1] == str2[-1])
+    and new_str1 == new_str2
+):
+    print("YES")
+else:
+    print("NO")
