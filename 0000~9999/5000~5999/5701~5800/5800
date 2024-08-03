@@ -1,0 +1,22 @@
+def largest_gap(scores):
+    sorted_scores = sorted(scores, reverse=True)
+    max_gap = 0
+    for i in range(len(scores) - 1):
+        gap = sorted_scores[i] - sorted_scores[i + 1]
+        if max_gap < gap:
+            max_gap = gap
+
+    return max_gap
+
+
+T = int(input())
+
+for i in range(T):
+    data = list(map(int, input().split()))
+    num = data[0]
+    scores = data[1:]
+    max_s = max(scores)
+    min_s = min(scores)
+    max_gap = largest_gap(scores)
+    print(f"Class {i+1}")
+    print(f"Max {max_s}, Min {min_s}, Largest gap {max_gap}")
