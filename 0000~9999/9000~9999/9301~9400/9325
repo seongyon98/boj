@@ -1,0 +1,15 @@
+import sys
+
+input = sys.stdin.readline
+
+T = int(input().strip())
+
+for _ in range(T):
+    s = int(input().strip())
+    N = int(input().strip())
+    total = s
+    for _ in range(N):
+        p, q = map(int, input().split())
+        total += p * q
+
+    print(total)
