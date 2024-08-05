@@ -1,0 +1,24 @@
+def hangul_chr(N):
+    base_code = 0xAC00
+
+    ini = 19
+    med = 21
+    fin = 28
+
+    idx = N - 1
+
+    ini_idx = idx // (med * fin)
+    med_idx = (idx % (med * fin)) // fin
+    fin_idx = idx % fin
+
+    hangul_code = base_code + (ini_idx * med * fin) + (med_idx * fin) + fin_idx
+
+    hangul_char = chr(hangul_code)
+
+    return hangul_char
+
+
+N = int(input().strip())
+result = hangul_chr(N)
+
+print(result)
