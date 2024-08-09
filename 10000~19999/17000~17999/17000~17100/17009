@@ -1,0 +1,4 @@
+apples = sum([3, 2, 1][i] * int(input()) for i in range(3))
+bananas = sum([3, 2, 1][i] * int(input()) for i in range(3))
+
+print('A' if apples > bananas else 'B' if apples < bananas else 'T')
