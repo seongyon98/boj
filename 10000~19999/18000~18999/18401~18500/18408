@@ -1,0 +1,12 @@
+nums = list(map(int, input().split()))
+
+ones = 0
+twos = 0
+for n in nums:
+    if n == 1:
+        ones += 1
+    else:
+        twos += 1
+
+
+print(1 if ones>twos else 2)
