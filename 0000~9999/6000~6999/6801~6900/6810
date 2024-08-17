@@ -1,0 +1,11 @@
+num = [9, 7, 8, 0, 9, 2, 1, 4, 1, 8]
+for _ in range(3):
+    num.append(int(input()))
+    
+for i in range(13):
+    if  i % 2 != 0:
+        num[i] *= 3
+    else:
+        num[i] = num[i]
+        
+print(f"The 1-3-sum is {sum(num)}")
