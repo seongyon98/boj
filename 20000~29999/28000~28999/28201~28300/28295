@@ -1,0 +1,14 @@
+dir = 0
+
+cmds = [int(input()) for _ in range(10)]
+
+for cmd in cmds:
+    if cmd == 1:
+        dir = (dir + 1) % 4
+    elif cmd == 2:
+        dir = (dir + 2) % 4
+    elif cmd == 3:
+        dir = (dir - 1) % 4
+
+dirs = ['N', 'E', 'S', 'W']
+print(dirs[dir])
