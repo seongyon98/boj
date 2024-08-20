@@ -1,0 +1,11 @@
+i = input()
+
+col = 0
+und = 0
+for char in i:
+    if char == ":":
+        col += 1
+    elif char == '_':
+        und += 1
+
+print(len(i) + col + (und * 5))
