@@ -1,0 +1,8 @@
+import math
+
+N = int(input())
+fac_n = math.factorial(N)
+
+weeks = fac_n // (3600*24*7)
+
+print(weeks)
