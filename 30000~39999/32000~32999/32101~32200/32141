@@ -1,0 +1,18 @@
+def max_cards(N, H, ds):
+    c_h = H
+    cnt = 0
+
+    for d in ds:
+        c_h -= d
+        cnt += 1
+        
+        if c_h <= 0:
+            return cnt
+    
+    return -1
+
+N, H = map(int, input().split())
+ds = list(map(int, input().split()))
+
+result = max_cards(N, H, ds)
+print(result)
