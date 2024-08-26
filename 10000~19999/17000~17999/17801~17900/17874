@@ -1,0 +1,6 @@
+N, h, v = map(int, input().split())
+
+a = max(N-h, h)
+b = max(N-v, v)
+
+print(a*b*4)
