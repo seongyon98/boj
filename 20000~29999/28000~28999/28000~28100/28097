@@ -1,0 +1,15 @@
+N = int(input())
+
+s = list(map(int, input().split()))
+
+total = sum(s)
+if N > 1:
+    total += 8*(N-1)
+
+days = 0
+if total >= 24:
+    days = total // 24
+
+hours = total % 24
+    
+print(days, hours)
