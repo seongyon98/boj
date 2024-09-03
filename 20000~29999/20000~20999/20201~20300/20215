@@ -1,0 +1,6 @@
+w, h = map(int, input().split())
+
+r = w+h
+d = (w**2 + h**2) ** 0.5
+
+print(r-d)
