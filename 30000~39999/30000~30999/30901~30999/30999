@@ -1,0 +1,15 @@
+N, M = map(int, input().split())
+q = 0
+for _ in range(N):
+    op = input()
+    pos = 0
+    neg = 0
+    for char in op:
+        if char == 'O':
+            pos += 1
+        else:
+            neg += 1
+    if pos > neg:
+        q += 1
+
+print(q)
