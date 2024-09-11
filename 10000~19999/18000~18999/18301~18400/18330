@@ -1,0 +1,10 @@
+n = int(input())
+k = int(input())
+
+lmt = k + 60
+if n <= lmt:
+    total = n * 1500
+else:
+    total = (lmt * 1500) + ((n - lmt) * 3000)
+
+print(total)
