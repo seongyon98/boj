@@ -1,0 +1,9 @@
+T = int(input())
+
+spc = []
+for _ in range(T):
+    spc.append(input())
+
+for name in spc:
+    if 'S' in name:
+        print(name)
