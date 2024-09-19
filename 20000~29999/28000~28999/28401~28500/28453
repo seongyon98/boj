@@ -1,0 +1,15 @@
+N = int(input())
+levels = list(map(int, input().split()))
+
+nums = []
+for M in levels:
+    if M == 300:
+        nums.append(1)
+    elif 275 <= M < 300:
+        nums.append(2)
+    elif 250 <= M < 275:
+        nums.append(3)
+    else:
+        nums.append(4)
+
+print(*nums)
