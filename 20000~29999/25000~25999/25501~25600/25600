@@ -1,0 +1,12 @@
+T = int(input())
+
+max_s = 0
+for _ in range(T):
+    a, d, g = map(int, input().split())
+    score = a * (d+g)
+    if a == (d+g):
+        score *= 2
+    if score > max_s:
+        max_s = score
+        
+print(max_s)
