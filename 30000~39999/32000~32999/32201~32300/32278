@@ -1,0 +1,8 @@
+N = int(input())
+
+if -32768 <= N <= 32767:
+    print('short')
+elif (-1)*(2**31) <= N <= (2**31 - 1):
+    print('int')
+else:
+    print('long long')
