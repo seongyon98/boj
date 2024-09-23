@@ -1,0 +1,6 @@
+from math import ceil
+
+r,c,n=map(int,input().split())
+
+result = ceil(c/n)*ceil(r/n)
+print(result)
