@@ -1,0 +1,10 @@
+sl = int(input())
+s = int(input())
+
+d = s - sl
+
+if d < 1:
+    print("Congratulations, you are within the speed limit!")
+else:
+    f = 100 if d <= 20 else 270 if d <= 30 else 500
+    print(f"You are speeding and your fine is ${f}.")
