@@ -1,0 +1,10 @@
+from collections import Counter
+
+socks = [int(input()) for _ in range(5)]
+
+cnt = Counter(socks)
+
+for sock, c in cnt.items():
+    if c % 2 == 1:
+        print(sock)
+        break
