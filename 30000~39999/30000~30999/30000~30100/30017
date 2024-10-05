@@ -1,0 +1,6 @@
+A, B = map(int, input().split())
+
+mp = min(A, B + 1)
+ms = mp + (mp - 1)
+
+print(ms)
