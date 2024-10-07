@@ -1,0 +1,9 @@
+n = int(input())
+
+a = 0
+for _ in range(n):
+    d = int(input())
+    if d % 2 != 0:
+        a += 1
+
+print(a)
