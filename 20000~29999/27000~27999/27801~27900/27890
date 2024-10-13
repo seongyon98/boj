@@ -1,0 +1,12 @@
+def ftn_hgt(x_0, N):
+    x_t = x_0
+    for t in range(N):
+        if x_t % 2 == 0:
+            x_t = (x_t // 2) ^ 6
+        else:
+            x_t = (2 * x_t) ^ 6
+    return x_t
+
+x_0, N = map(int, input().split())
+
+print(ftn_hgt(x_0, N))
