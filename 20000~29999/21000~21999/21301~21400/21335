@@ -1,0 +1,7 @@
+import math
+
+a = int(input())
+r = math.sqrt(a / math.pi)
+C = 2 * math.pi * r
+
+print(C)
