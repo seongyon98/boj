@@ -1,0 +1,19 @@
+from collections import deque
+import sys
+
+input = sys.stdin.readline
+
+N = int(input().strip())
+A = list(map(int, input().strip().split()))
+B = list(map(int, input().strip().split()))
+M = int(input().strip())
+C = list(map(int, input().strip().split()))
+
+result = deque([])
+for x in range(N):
+    if A[x] == 0:
+        result.append(B[x])
+
+for x in range(M):
+    result.appendleft(C[x])
+    print(result.pop(), end=" ")
