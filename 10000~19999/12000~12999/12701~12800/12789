@@ -1,0 +1,16 @@
+n = int(input())
+arr = list(map(int, input().split()))
+
+def can_sort(arr):
+    stack = []
+    current = 1
+    
+    for num in arr:
+        stack.append(num)
+        while stack and stack[-1] == current:
+            stack.pop()
+            current += 1
+            
+    return "Nice" if not stack else "Sad"
+
+print(can_sort(arr))
