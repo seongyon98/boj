@@ -1,0 +1,10 @@
+def modular_product(N, M, numbers):
+    result = 1
+    for num in numbers:
+        result = (result * num) % M
+    return result
+
+N, M = map(int, input().split())
+numbers = list(map(int, input().split()))
+
+print(modular_product(N, M, numbers))
