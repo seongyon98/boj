@@ -1,0 +1,7 @@
+N, M = map(int, input().split())
+hours = list(map(int, input().split()))
+
+if (sum(hours) - N) < M:
+    print("OUT")
+else:
+    print("DIMI")
