@@ -1,0 +1,8 @@
+import math
+
+R = int(input())
+e = math.pi * R * R
+t = 2 * R * R
+
+print(f"{e:.6f}")
+print(f"{t:.6f}")
