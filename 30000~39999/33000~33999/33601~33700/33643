@@ -1,0 +1,10 @@
+ready = set()
+ess = {"keys", "phone", "wallet"}
+for _ in range(int(input())):
+    ready.add(input())
+
+missing = sorted(ess - ready)
+if missing:
+    print("\n".join(missing))
+else:
+    print("ready")
