@@ -1,0 +1,15 @@
+import sys
+from collections import defaultdict
+
+S1, S2, S3 = map(int, sys.stdin.readline().split())
+
+s_cnt = defaultdict(int)
+for i in range(1, S1 + 1):
+    for j in range(1, S2 + 1):
+        for k in range(1, S3 + 1):
+            s_cnt[i + j + k] += 1
+
+m_cnt = max(s_cnt.values())
+r = min(sk for sk, cnt in s_cnt.items() if cnt == m_cnt)
+
+print(r)
