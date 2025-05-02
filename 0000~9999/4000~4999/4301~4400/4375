@@ -1,0 +1,22 @@
+from collections import deque
+import sys
+
+def sltn(n):
+    vst = [False] * n
+    q = deque()
+    q.append(('1', 1 % n))
+    vst[1 % n] = True
+
+    while q:
+        s, rmdr = q.popleft()
+        if rmdr == 0:
+            return len(s)
+        nxt = (rmdr * 10 + 1) % n
+        if not vst[nxt]:
+            vst[nxt] = True
+            q.append((s + '1', nxt))
+    return -1
+
+for line in sys.stdin:
+    n = int(line.strip())
+    print(sltn(n))
